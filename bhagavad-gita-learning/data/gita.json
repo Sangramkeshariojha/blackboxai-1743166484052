@@ -13,7 +13,7 @@
         }
       ],
       "color": "bg-amber-500",
-      "commentary": "This chapter sets the scene for the Bhagavad Gita..."
+      "commentary": "This chapter sets the scene for the Bhagavad Gita."
     },
     {
       "id": 2,
@@ -22,13 +22,13 @@
       "verses": [
         {
           "verse_number": "2.1",
-          "sanskrit": "संजय उवाच\nतं तथा कृपयाविष्टमश्रुपूर्णाकुलेक्षणम्।\nविषीदन्तमिदं वाक्यमुवाच मधुसूदनः॥",
+          "sanskrit": "सञ्जय उवाच\nतं तथा कृपयाविष्टमश्रुपूर्णाकुलेक्षणम्।\nविषीदन्तमिदं वाक्यमुवाच मधुसूदनः॥",
           "english": "Sanjaya said: To him who was overcome with compassion and sorrow, with eyes full of tears, Madhusudana (Krishna) spoke these words.",
           "hindi": "संजय ने कहा: करुणा और दुःख से व्याकुल, आँसुओं से भरी आँखों वाले अर्जुन से मधुसूदन (कृष्ण) ने ये वचन कहे।"
         }
       ],
       "color": "bg-blue-500",
-      "commentary": "This chapter contains the essence of the entire Gita..."
+      "commentary": "This chapter contains the essence of the entire Gita."
     },
     {
       "id": 3,
@@ -43,7 +43,7 @@
         }
       ],
       "color": "bg-green-500",
-      "commentary": "This chapter explains the concept of selfless action..."
+      "commentary": "This chapter explains the concept of selfless action."
     }
   ]
 }
