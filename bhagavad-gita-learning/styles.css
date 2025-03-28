@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif', serif;
+}
+
+/* Chapter Card Styles */
+.chapter-card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+}
+
+.chapter-card__header {
+    @apply bg-amber-500 dark:bg-amber-600 text-white p-4;
+}
+
+.chapter-card__body {
+    @apply p-4 text-gray-700 dark:text-gray-300;
+}
+
+/* Dark mode toggle animation */
+.dark-mode-toggle {
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .chapter-card {
+        @apply w-full;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-amber-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-amber-600;
+}
