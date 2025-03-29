@@ -29,21 +29,6 @@
       ],
       "color": "bg-blue-500",
       "commentary": "This chapter contains the essence of the entire Gita."
-    },
-    {
-      "id": 3,
-      "title": "Karma Yoga",
-      "description": "The Yoga of Action",
-      "verses": [
-        {
-          "verse_number": "3.1",
-          "sanskrit": "अर्जुन उवाच\nज्यायसी चेत्कर्मणस्ते मता बुद्धिर्जनार्दन।\nतत्किं कर्मणि घोरे मां नियोजयसि केशव॥",
-          "english": "Arjuna said: O Janardana (Krishna), if You consider that knowledge is superior to action, why then do You engage me in this terrible action?",
-          "hindi": "अर्जुन ने कहा: हे जनार्दन, यदि आप ज्ञान को कर्म से श्रेष्ठ मानते हैं, तो फिर आप मुझे इस भयानक युद्ध में क्यों लगा रहे हैं?"
-        }
-      ],
-      "color": "bg-green-500",
-      "commentary": "This chapter explains the concept of selfless action."
     }
   ]
 }
