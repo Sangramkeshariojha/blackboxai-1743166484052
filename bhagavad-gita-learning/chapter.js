@@ -178,3 +178,86 @@ if (themeToggle) {
     }
     updateThemeIcon();
 }
+
+// Test Functionality
+const testSection = document.getElementById('test-section');
+const testQuestions = document.getElementById('test-questions');
+const submitTest = document.getElementById('submit-test');
+const testResults = document.getElementById('test-results');
+
+if (testSection && testQuestions && submitTest && testResults) {
+    // Load test questions when chapter loads
+    loadTestQuestions();
+
+    // Handle test submission
+    submitTest.addEventListener('click', async () => {
+        const answers = [];
+        document.querySelectorAll('.test-question').forEach((q, i) => {
+            const selected = q.querySelector('input[type="radio"]:checked');
+            answers.push(selected ? parseInt(selected.value) : null);
+        });
+
+        try {
+            const token = localStorage.getItem('token');
+            const response = await fetch(`/api/tests/${chapterId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({ answers })
+            });
+            
+            const result = await response.json();
+            showTestResults(result);
+        } catch (err) {
+            console.error('Error submitting test:', err);
+            alert('Error submitting test. Please try again.');
+        }
+    });
+}
+
+async function loadTestQuestions() {
+    try {
+        const token = localStorage.getItem('token');
+        const response = await fetch(`/api/tests/${chapterId}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        const testData = await response.json();
+        
+        if (testData.questions?.length > 0) {
+            renderTestQuestions(testData.questions);
+            testSection.classList.remove('hidden');
+        }
+    } catch (err) {
+        console.error('Error loading test:', err);
+    }
+}
+
+function renderTestQuestions(questions) {
+    testQuestions.innerHTML = questions.map((q, i) => `
+        <div class="test-question">
+            <h3 class="font-bold mb-2">${i+1}. ${q.text}</h3>
+            <div class="space-y-2">
+                ${q.options.map((opt, j) => `
+                    <label class="test-option">
+                        <input type="radio" name="q${i}" value="${j}">
+                        ${opt}
+                    </label>
+                `).join('')}
+            </div>
+        </div>
+    `).join('');
+}
+
+function showTestResults(result) {
+    testResults.classList.remove('hidden');
+    testResults.innerHTML = `
+        <h3 class="font-bold mb-2">Test Results</h3>
+        <p>Score: ${result.score}/${result.total}</p>
+        <p>Percentage: ${Math.round((result.score/result.total)*100)}%</p>
+    `;
+    testResults.classList.add(result.score === result.total ? 'correct' : 'incorrect');
+}
