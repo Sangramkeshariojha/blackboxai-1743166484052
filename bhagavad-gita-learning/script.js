@@ -2,6 +2,66 @@
 const themeToggle = document.getElementById('theme-toggle');
 const searchInput = document.querySelector('input[type="text"]');
 const chaptersContainer = document.querySelector('.grid');
+const authButton = document.getElementById('auth-button');
+const authModal = document.getElementById('auth-modal');
+const closeAuth = document.getElementById('close-auth');
+const loginForm = document.getElementById('login-form');
+
+// Auth functionality
+authButton.addEventListener('click', () => {
+  authModal.classList.remove('hidden');
+});
+
+closeAuth.addEventListener('click', () => {
+  authModal.classList.add('hidden');
+});
+
+loginForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
+
+  try {
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await response.json();
+    
+    if (response.ok) {
+      localStorage.setItem('token', data.token);
+      authModal.classList.add('hidden');
+      updateAuthUI(true);
+    } else {
+      alert(data.error || 'Login failed');
+    }
+  } catch (err) {
+    console.error('Login error:', err);
+    alert('Login failed. Please try again.');
+  }
+});
+
+function updateAuthUI(isLoggedIn) {
+  if (isLoggedIn) {
+    authButton.innerHTML = '<i class="fas fa-user-check"></i>';
+    authButton.classList.add('bg-green-100', 'dark:bg-green-900');
+  } else {
+    authButton.innerHTML = '<i class="fas fa-user"></i>';
+    authButton.classList.remove('bg-green-100', 'dark:bg-green-900');
+  }
+}
+
+function checkAuthState() {
+  const token = localStorage.getItem('token');
+  if (token) {
+    updateAuthUI(true);
+  }
+}
 
 // Load Gita data
 let gitaData = [];
@@ -83,6 +143,7 @@ function renderChapters() {
 }
 
 // Initialize the page
+checkAuthState();
 renderChapters();
 
 // Search Functionality (will be implemented after JSON data is loaded)
