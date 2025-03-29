@@ -1,0 +1,34 @@
+{
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Arjuna Vishada Yoga",
+      "description": "The Yoga of Arjuna's Dejection",
+      "verses": [
+        {
+          "verse_number": "1.1",
+          "sanskrit": "धृतराष्ट्र उवाच\nधर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः।\nमामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय॥",
+          "english": "Dhritarashtra said: O Sanjaya, after gathering on the holy field of Kurukshetra, and desiring to fight, what did my sons and the sons of Pandu do?",
+          "hindi": "धृतराष्ट्र ने कहा: हे संजय, धर्मभूमि कुरुक्षेत्र में युद्ध की इच्छा से एकत्र हुए मेरे और पाण्डु के पुत्रों ने क्या किया?"
+        }
+      ],
+      "color": "bg-amber-500",
+      "commentary": "This chapter sets the scene for the Bhagavad Gita."
+    },
+    {
+      "id": 2,
+      "title": "Sankhya Yoga",
+      "description": "The Yoga of Knowledge",
+      "verses": [
+        {
+          "verse_number": "2.1",
+          "sanskrit": "सञ्जय उवाच\nतं तथा कृपयाविष्टमश्रुपूर्णाकुलेक्षणम्।\nविषीदन्तमिदं वाक्यमुवाच मधुसूदनः॥",
+          "english": "Sanjaya said: To him who was overcome with compassion and sorrow, with eyes full of tears, Madhusudana (Krishna) spoke these words.",
+          "hindi": "संजय ने कहा: करुणा और दुःख से व्याकुल, आँसुओं से भरी आँखों वाले अर्जुन से मधुसूदन (कृष्ण) ने ये वचन कहे।"
+        }
+      ],
+      "color": "bg-blue-500",
+      "commentary": "This chapter contains the essence of the entire Gita."
+    }
+  ]
+}
